@@ -1,14 +1,21 @@
+# Note about enviroment.url configuration var
+# See http://rdoc.info:8080/github/thoughtbot/paperclip/master/Paperclip/Storage/S3 - url var.
+# url can be ":s3_domain_url" or ":s3_path_url" (default)
+
 development:
   bucket: your_app_dev
   access_key_id: your_access_key
   secret_access_key: secret_access_key
+  url: ":s3_domain_url"
 
 test:
   bucket: your_app_test
   access_key_id: your_access_key
   secret_access_key: secret_access_key
+  url: ":s3_domain_url"
 
 production:
   bucket: your_app_prod
   access_key_id: your_access_key
   secret_access_key: secret_access_key
+  url: ":s3_path_url"
