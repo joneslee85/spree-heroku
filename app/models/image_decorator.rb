@@ -10,11 +10,10 @@ Spree::Image.class_eval do
         :bucket => ENV['S3_BUCKET']
       }
     else
-      S3_CONFIG = YAML.load_file(Rails.root.join('config', 's3.yml'))[Rails.env]
       S3_OPTIONS = {
         :storage => 's3',
         :s3_credentials => Rails.root.join('config', 's3.yml'),
-        :url => S3_CONFIG['url'] ? S3_CONFIG['url'] : ":s3_domain_url"
+        :url => ":s3_domain_url"
       }
     end
   else
