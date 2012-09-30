@@ -37,16 +37,23 @@ Create under RAILS_ROOT/config/s3.yml
       bucket: your_app_dev
       access_key_id: your_access_key
       secret_access_key: secret_access_key
+      url: domain_url_or_path # See http://rdoc.info:8080/github/thoughtbot/paperclip/master/Paperclip/Storage/S3 - url var.
 
     test:
       bucket: your_app_test
       access_key_id: your_access_key
       secret_access_key: secret_access_key
+      url: domain_url_or_path
 
     production:
       bucket: your_app_prod
       access_key_id: your_access_key
       secret_access_key: secret_access_key
+      url: domain_url_or_path
+
+Explanation about url variable:
+See http://rdoc.info:8080/github/thoughtbot/paperclip/master/Paperclip/Storage/S3
+"url" can be ":s3_domain_url" or ":s3_path_url" (default)
 
 Create a Heroku application and deploy it:
 
