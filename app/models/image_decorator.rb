@@ -7,7 +7,8 @@ Spree::Image.class_eval do
           :access_key_id     => ENV['S3_KEY'],
           :secret_access_key => ENV['S3_SECRET']
         },
-        :bucket => ENV['S3_BUCKET']
+        :bucket => ENV['S3_BUCKET'],
+        :url => ":s3_domain_url"
       }
     else
       S3_OPTIONS = {
