@@ -14,7 +14,7 @@ Spree::Taxon.class_eval do
       S3_OPTIONS = {
         :storage => 's3',
         :s3_credentials => Rails.root.join('config', 's3.yml'),
-        :url => S3_CONFIG['url'] ? S3_CONFIG['url'] : ":s3_path_url"
+        :url => S3_CONFIG['url'] ? S3_CONFIG['url'] : ":s3_domain_url"
       }
     end
   else
