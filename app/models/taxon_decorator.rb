@@ -18,7 +18,7 @@ Spree::Taxon.class_eval do
       }
     end
   else
-    S3_OPTIONS = { :storage => 'filesystem' }
+    S3_OPTIONS = { :storage => 'filesystem' } unless defined?(S3_OPTIONS)
   end
 
   attachment_definitions[:icon] = (attachment_definitions[:icon] || {}).merge(S3_OPTIONS)
