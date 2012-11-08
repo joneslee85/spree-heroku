@@ -37,16 +37,20 @@ Create under RAILS_ROOT/config/s3.yml
       bucket: your_app_dev
       access_key_id: your_access_key
       secret_access_key: secret_access_key
+      url: domain_url_or_path
 
     test:
       bucket: your_app_test
       access_key_id: your_access_key
       secret_access_key: secret_access_key
+      url: domain_url_or_path
 
     production:
       bucket: your_app_prod
       access_key_id: your_access_key
       secret_access_key: secret_access_key
+      url: domain_url_or_path
+
 
 Create a Heroku application and deploy it:
 
@@ -64,6 +68,14 @@ Bootstrap the database locally (not possible in Heroku, because the rake task at
 Please note that if you choose to load sample data, images will be missing for all products. Spree's bootstrap task copies the images locally, but it doesn't put them on S3, where this extension configures Spree to look for images.
 
 That's it - you're done! :)
+
+Explanation about url variable
+------------------------------
+
+See the url variable in http://rdoc.info:8080/github/thoughtbot/paperclip/master/Paperclip/Storage/S3.
+
+_url_ in s3.yml can be ":s3_domain_url" or ":s3_path_url" (default). STRING.
+
 
 Troubleshooting
 ---------------
